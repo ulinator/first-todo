@@ -9,14 +9,11 @@ function addItem() {
 
     if (value) {
       var newNode = new TodoItem(value);
-      newNode.value = value;
-      var type = document.createElement(newNode.type);
-      console.log(newNode);
-      document.querySelector('#item-list').appendChild(type);
+      document.querySelector('#item-list').appendChild(newNode.element);
       // attachEvent(newNode);
-      console.log("click " + newNode.value);
+      console.log("click ", newNode);
     } else {
-    	console.log("pusty klik");
+      console.log("pusty klik");
     }
 };
 
