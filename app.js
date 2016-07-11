@@ -6,9 +6,14 @@ button.addEventListener("click", function() {
 
 function attachEvent(item) {
   item.addEventListener("click", function(){
-    item.classList.toggle("checked");
+    //item.classList.toggle("checked");
+	item.toggle;
   });
 };
+
+// function attachEvent(item) {
+//   item.addEventListener("click", item.toggle());
+// };
 
 function addItem() {
     var value = document.querySelector("#textbox").value;
@@ -16,15 +21,17 @@ function addItem() {
     if (value) {
       var newNode = new TodoItem(value);
       document.querySelector('#item-list').appendChild(newNode.element);
+
       attachEvent(newNode.element);
+
       console.log("click ", newNode);
     } else {
       console.log("pusty klik");
     }
 };
 
-// ***** SKRESLENIA/ODKRESLENIA PO KLIKNIECIU W LISTE *****
+
+function greyOut(item) {
 
 
-
-// items.forEach(attachEvent);
+}
