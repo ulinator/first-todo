@@ -4,12 +4,13 @@ button.addEventListener("click", function() {
   addItem();
 });
 
-function attachEvent(item) {
-  item.addEventListener("click", function(){
-    //item.classList.toggle("checked");
-	item.toggle;
-  });
-};
+// function attachEvent(item) {
+//   item.element.addEventListener("click", function(){
+//     //item.classList.toggle("checked");
+//     var COS = item;
+// 		COS.toggle();
+//   });
+// };
 
 // function attachEvent(item) {
 //   item.addEventListener("click", item.toggle());
@@ -22,7 +23,7 @@ function addItem() {
       var newNode = new TodoItem(value);
       document.querySelector('#item-list').appendChild(newNode.element);
 
-      attachEvent(newNode.element);
+      newNode.attachEvent();
 
       console.log("click ", newNode);
     } else {
