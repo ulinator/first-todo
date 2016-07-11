@@ -4,13 +4,19 @@ button.addEventListener("click", function() {
   addItem();
 });
 
+function attachEvent(item) {
+  item.addEventListener("click", function(){
+    item.classList.toggle("checked");
+  });
+};
+
 function addItem() {
     var value = document.querySelector("#textbox").value;
 
     if (value) {
       var newNode = new TodoItem(value);
       document.querySelector('#item-list').appendChild(newNode.element);
-      // attachEvent(newNode);
+      attachEvent(newNode.element);
       console.log("click ", newNode);
     } else {
       console.log("pusty klik");
@@ -19,10 +25,6 @@ function addItem() {
 
 // ***** SKRESLENIA/ODKRESLENIA PO KLIKNIECIU W LISTE *****
 
-// function attachEvent(item) {
-//   item.addEventListener("click", function(){
-//     item.classList.toggle("checked");
-//   });
-// };
+
 
 // items.forEach(attachEvent);
