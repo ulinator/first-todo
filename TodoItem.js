@@ -31,5 +31,12 @@ TodoItem.prototype.toggle = function() {
 };
 
 TodoItem.prototype.attachEvent = function() {
-	this.element.addEventListener("click", toggle());
+	var self = this; // to trick JS into passing 'this' but not from this object, but from object's.this, right?
+	this.element.addEventListener("click", function() {
+		self.toggle();
+	});
+
+/* or: 
+	this.element.addEventListener("click", this.toggle.bind(this));
+*/
 };

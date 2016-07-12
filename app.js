@@ -24,15 +24,10 @@ function addItem() {
       document.querySelector('#item-list').appendChild(newNode.element);
 
       newNode.attachEvent();
-
       console.log("click ", newNode);
+      newNode.addToList;
+
     } else {
       console.log("pusty klik");
     }
 };
-
-
-function greyOut(item) {
-
-
-}
