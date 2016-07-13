@@ -1,6 +1,7 @@
-function TodoItem(value, active, type) {
+function TodoItem(value, active, id, type) {
 	this.value = value;
 	this.active = true;
+	this.id = id;
 	this.type = type || "li"; // default value of type is li
 	this.element = document.createElement(this.type);
 	this.element.innerHTML = this.value;
@@ -37,4 +38,8 @@ TodoItem.prototype.attachEvent = function() {
 /* or: 
 	this.element.addEventListener("click", this.toggle.bind(this));
 */
+};
+
+TodoItem.prototype.attachId = function(number) {
+	this.element.setAttribute('id', number);
 };
