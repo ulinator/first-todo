@@ -1,10 +1,10 @@
-function TodoList(items) {
-	this.items = ["CZIKOZAURA"];
+function ItemList(items) {
+	this.items = ["one"];
 }
 
-TodoList.prototype.addToList = function() {
-	var item = this.value;
-	this.items =+ item;
+ItemList.prototype.addToList = function(item) {
+	var list = this.items;
+	list.push(item);
 	console.log("item to: ", item);
-	console.log("lista itemsow to: ", this.items);
+	console.log("lista itemsow to: ", list);
 };

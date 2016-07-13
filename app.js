@@ -16,6 +16,8 @@ button.addEventListener("click", function() {
 //   item.addEventListener("click", item.toggle());
 // };
 
+var newList = new ItemList();
+
 function addItem() {
     var value = document.querySelector("#textbox").value;
 
@@ -24,8 +26,8 @@ function addItem() {
       document.querySelector('#item-list').appendChild(newNode.element);
 
       newNode.attachEvent();
-      console.log("click ", newNode);
-      newNode.addToList;
+      newList.addToList(newNode.value);
+      console.log(newList);
 
     } else {
       console.log("pusty klik");

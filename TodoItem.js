@@ -15,11 +15,9 @@ TodoItem.prototype.toggle = function() {
 	if (isActive === true) {
 		thisElement.classList.add("checked");
 		this.active = false;
-		console.log("byl true i zmienilem na false");
 	} else if (isActive === false) {
 		thisElement.classList.remove("checked");
 		this.active = true;
-		console.log("byl false i zmienilem na true");
 	} else {
 		console.log("bylo cos innego, wtf");
 	}
