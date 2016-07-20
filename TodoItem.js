@@ -11,18 +11,13 @@ TodoItem.prototype.toggle = function() {
 	var isActive = this.active;
 	var thisElement = this.element ;
 
-	console.log("toggleeee");
-
 	if (isActive === true) {
 		thisElement.classList.add("checked");
 		this.active = false;
 	} else if (isActive === false) {
 		thisElement.classList.remove("checked");
 		this.active = true;
-	} else {
-		console.log("bylo cos innego, wtf");
 	}
-
 /* or: 
 	this.active = !this.active;
 	this.element.classList.toggle("checked");
@@ -34,7 +29,6 @@ TodoItem.prototype.attachEvent = function() {
 	this.element.addEventListener("click", function() {
 		self.toggle();
 	});
-
 /* or: 
 	this.element.addEventListener("click", this.toggle.bind(this));
 */
@@ -42,4 +36,5 @@ TodoItem.prototype.attachEvent = function() {
 
 TodoItem.prototype.attachId = function(number) {
 	this.element.setAttribute('id', number);
+	this.id = number;
 };
