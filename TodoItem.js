@@ -4,7 +4,8 @@ function TodoItem(value, active, id, type) {
 	this.id = id;
 	this.type = type || "li"; // default value of type is li
 	this.element = document.createElement(this.type);
-	this.element.innerHTML = this.value;
+	this.buttonType = "<a class=&#34visible&#34 href=&#34#&#34>remove</a>";
+	this.element.innerHTML = this.value + this.buttonType;
 }
 
 TodoItem.prototype.toggle = function() {
@@ -22,6 +23,12 @@ TodoItem.prototype.toggle = function() {
 	this.active = !this.active;
 	this.element.classList.toggle("checked");
 */
+};
+
+TodoItem.prototype.visible = function() {
+	this.element.addEventListener("mouseover", function() {
+		self.toggle();
+	});
 };
 
 TodoItem.prototype.attachEvent = function() {

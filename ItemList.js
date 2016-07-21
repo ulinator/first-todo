@@ -17,13 +17,13 @@ ItemList.prototype.removeFromList = function(id) {
 
 	var filterFunction = function(item) {
 		console.log("funkcja filtrujaca item: ", item);
-		return item.id === item;
+		return item.id !== id ;
 	};
 
 	// newList.removeFromList({id:1})
 
 	var filter = list.filter(filterFunction);
-	console.log("filter", filter);
+	list = filter;
 	console.log("list after filter: " , list);
 	// for ( i = listLen; i === 1; i-- ) {
 	// 	console.log("item is: " + list[i]);

@@ -4,11 +4,28 @@
 
 ul {
   list-style: none;
+  max-width: 400px;
 }
 
 ul li {
   cursor: pointer;
+  width: auto;
   margin-bottom: 10px;
+}
+
+ul li a {
+	display: none;
+	padding-left: 10px;
+	color: red;
+	text-decoration: none;
+}
+
+ul li a.visible {
+	display: inline;
+}
+
+ul li a:hover {
+	text-decoration: underline;
 }
 
 .checked {
