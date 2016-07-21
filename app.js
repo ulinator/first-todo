@@ -22,6 +22,8 @@ function addItem() {
       newNode.attachEvent();
 
       newList.addToList(newNode);
+      
+      newNode.attachHover();
 
     } else {
       console.log("pusty klik");

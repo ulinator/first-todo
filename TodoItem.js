@@ -4,7 +4,7 @@ function TodoItem(value, active, id, type) {
 	this.id = id;
 	this.type = type || "li"; // default value of type is li
 	this.element = document.createElement(this.type);
-	this.buttonType = "<a class=&#34visible&#34 href=&#34#&#34>remove</a>";
+	this.buttonType = '<a class="remove-link" href="#">remove</a>';
 	this.element.innerHTML = this.value + this.buttonType;
 }
 
@@ -25,10 +25,25 @@ TodoItem.prototype.toggle = function() {
 */
 };
 
-TodoItem.prototype.visible = function() {
+TodoItem.prototype.hover = function() {
+	var link = this.element.querySelector('.remove-link');
+	link.classList.add("visible");
+};
+
+TodoItem.prototype.unhover = function() {
+	var link = this.element.querySelector('.remove-link');
+	link.classList.remove("visible");
+};
+
+TodoItem.prototype.attachHover = function() {
+	var self = this; 
 	this.element.addEventListener("mouseover", function() {
-		self.toggle();
+		self.hover();
 	});
+	this.element.addEventListener("mouseout", function() {
+		self.unhover();
+	});
+
 };
 
 TodoItem.prototype.attachEvent = function() {
