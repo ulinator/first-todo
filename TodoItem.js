@@ -39,8 +39,6 @@ TodoItem.prototype.attachDelete = function() {
 	var parent = this.id;
 	var link = this.element.children[0];
 	link.addEventListener("click", function() {
-
-		console.log("delete cos robi: ", parent);
 		newList.removeFromList(parent);
 	});	
 };
