@@ -25,27 +25,6 @@ TodoItem.prototype.toggle = function() {
 */
 };
 
-TodoItem.prototype.hover = function() {
-	var link = this.element.querySelector('.remove-link');
-	link.classList.add("visible");
-};
-
-TodoItem.prototype.unhover = function() {
-	var link = this.element.querySelector('.remove-link');
-	link.classList.remove("visible");
-};
-
-TodoItem.prototype.attachHover = function() {
-	var self = this; 
-	this.element.addEventListener("mouseover", function() {
-		self.hover();
-	});
-	this.element.addEventListener("mouseout", function() {
-		self.unhover();
-	});
-
-};
-
 TodoItem.prototype.attachEvent = function() {
 	var self = this; // to trick JS into passing 'this' but not from this object, but from object's.this, right?
 	this.element.addEventListener("click", function() {
@@ -56,7 +35,38 @@ TodoItem.prototype.attachEvent = function() {
 */
 };
 
+TodoItem.prototype.attachDelete = function() {
+	var parent = this.id;
+	var link = this.element.children[0];
+	link.addEventListener("click", function() {
+
+		console.log("delete cos robi: ", parent);
+		newList.removeFromList(parent);
+	});	
+};
+
 TodoItem.prototype.attachId = function(number) {
 	this.element.setAttribute('id', number);
 	this.id = number;
 };
+
+// Below is totally useless code, that could be written in two lines of css.
+// TodoItem.prototype.hover = function() {
+// 	var link = this.element.querySelector('.remove-link');
+// 	link.classList.add("visible");
+// };
+
+// TodoItem.prototype.unhover = function() {
+// 	var link = this.element.querySelector('.remove-link');
+// 	link.classList.remove("visible");
+// };
+
+// TodoItem.prototype.attachHover = function() {
+// 	var self = this; 
+// 	this.element.addEventListener("mouseover", function() {
+// 		self.hover();
+// 	});
+// 	this.element.addEventListener("mouseout", function() {
+// 		self.unhover();
+// 	});
+// };

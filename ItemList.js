@@ -11,8 +11,6 @@ ItemList.prototype.addToList = function(item) {
 
 ItemList.prototype.removeFromList = function(id) {
 	var list = this.items;
-	var listLen = list.length;
-	console.log("removefromlist");
 	console.log("list before filter: " , list);
 
 	var filterFunction = function(item) {
