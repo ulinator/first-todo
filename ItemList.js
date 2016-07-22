@@ -1,5 +1,5 @@
 function ItemList(items) {
-	this.items = [];
+	this.items = ["one"];
 };
 
 ItemList.prototype.addToList = function(item) {
@@ -12,19 +12,25 @@ ItemList.prototype.addToList = function(item) {
 ItemList.prototype.removeFromList = function(id) {
 	var list = this.items;
 	console.log("list before filter: " , list);
-	
-	var elem = document.getElementById(id);
 
-	var filterFunction = function(item) {
-		console.log("funkcja filtrujaca item: ", item);
-		return item.id !== id ;
+	var elemFunction = function(item) {
+		console.log("funkcja elem : ", id);
+		return item.id === id;
 	};
 
-	// newList.removeFromList({id:1})
+	console.log("elem to:", elemFunction());
+
+	var filterFunction = function(item) {
+		return item.id !== id;
+	};
+
+	// var elem = list.find(elemFunction);
 
 	var filter = list.filter(filterFunction);
-	elem.parentNode.removeChild(elem);
 
 	this.items = filter;
-	console.log("list after filter: " , list);
+
+	// elem.parentNode.removeChild(elem);
+
+	console.log("list after filter: " , this.items);
 };

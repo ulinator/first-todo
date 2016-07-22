@@ -4,14 +4,6 @@ button.addEventListener("click", function() {
   addItem();
 });
 
-// var deleteButton = document.querySelector(".remove-link");
-
-// deleteButton.addEventListener("click", function() {
-// 	var parentsId = this.parentNode.getAttribute("id");
-// 	console.log("parentsId", parentsId);
-// 	// removeFromList(parentsId);
-// });
-
 var newList = new ItemList();
 var counter = 0;
 
@@ -29,16 +21,10 @@ function addItem() {
 
 	    newNode.attachEvent();
 			newNode.attachDelete();
-			
+
 	    newList.addToList(newNode);
 
     } else {
       console.log("pusty klik");
     }
-};
-
-function getObject(listName, itemName)  {
-	var objWithItem = listName.forEach().find(itemName);
-	console.log("zwracam: ", objWithItem);
-	return objWithItem;
 };
