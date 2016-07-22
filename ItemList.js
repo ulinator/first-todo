@@ -14,23 +14,21 @@ ItemList.prototype.removeFromList = function(id) {
 	console.log("list before filter: " , list);
 
 	var elemFunction = function(item) {
-		console.log("funkcja elem : ", id);
 		return item.id === id;
 	};
-
-	console.log("elem to:", elemFunction());
 
 	var filterFunction = function(item) {
 		return item.id !== id;
 	};
 
-	// var elem = list.find(elemFunction);
+	var elem = list.find(elemFunction);
 
 	var filter = list.filter(filterFunction);
 
-	this.items = filter;
+	var item = elem.element;
+	item.parentNode.removeChild(item);
 
-	// elem.parentNode.removeChild(elem);
+	this.items = filter;
 
 	console.log("list after filter: " , this.items);
 };
