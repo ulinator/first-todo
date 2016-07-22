@@ -1,0 +1,8 @@
+JSON.stringify(newList)
+to bedzie to, co sie wyeksportuje
+i takiego stringa mozesz zapisac w localStorage
+a potem przy imporcie go pobrac, zrobic JSON.parse (to odwrotnosc JSON.stringify, robi obiekt z poprawnego stringa)
+przeiterowac po tym
+i dla kazdego elementu zrobic nowy TodoItem
+i go dodac do listy
+i bangla
